@@ -112,24 +112,6 @@ class Home extends Component {
           <MainNav />
           {/* HERO-5\
       ============================================= */}
-          <div className="content-Home-image">
-            <Link
-              activeClass="active"
-              className="nav-item nl-simple "
-              to="test"
-              spy={true}
-              smooth={true}
-              duration={500}
-              style={{ cursor: "pointer" }}
-            >
-              <img
-                className="arrow-button animated fadeInUp visible"
-                src={require("./images/homeImage/down.png")}
-                alt="hero-image"
-                width={40}
-              />
-            </Link>
-          </div>{" "}
           <hr id="test" className="hr-line offset-10 offset-top-0 m-bottom-0" />
           {/* END HERO-5 */}
           {/* CONTENT-7
@@ -156,24 +138,6 @@ class Home extends Component {
           {/* <section id="more-apps" className="moreapps-section division"> */}
           {/* <div className="container"> */}
           {/* <div className="row"> */}
-          <section id="more-apps" className="division">
-            <div className="container p-right-10 p-left-0 ">
-              <hr className="hr-line offset-2 offset-top-0 m-bottom-0" />
-              <div className="d-flex align-items-center">
-                <div className="col-md-2_R p-right-0 p-left-0 offset-0">
-                  <img
-                    className="img-fluid home-service"
-                    src={require("./images/Home_Service.png")}
-                    alt="hero-image"
-                  />
-                </div>
-                <div className="col-md-9 p-left-0 p-right-0 col-md-9_R">
-                  <Show />
-                </div>
-              </div>{" "}
-            </div>{" "}
-            {/* End container */}
-          </section>{" "}
           {/* END MORE APPS */}
         </div>{" "}
         <br />

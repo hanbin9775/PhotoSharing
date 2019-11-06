@@ -1,0 +1,42 @@
+#page .floatBox {
+  position: fixed;
+  z-index: 5;
+  bottom: 12px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer-float .floatBox {
+  position: relative;
+  float: right;
+  z-index: 5;
+  right: 10px;
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+#ex-hd .floatBox {
+  visibility: hidden;
+  animation: none;
+}
+
+.floatBox .floatBtn {
+  padding: 0px;
+  border-radius: 100%;
+  background-color: #fff;
+  opacity: 0.85;
+}
+
+.floatBox .floatBtn:hover {
+  opacity: 0.95;
+}
+
+.floatBox .floatBtn:hover .float-btn {
+  opacity: 1;
+}
+
+.floatBox .floatTop {
+  margin-bottom: 4px;
+}

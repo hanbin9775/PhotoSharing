@@ -16,7 +16,7 @@ class App extends Component {
           <Route path="/services" component={Service} />
           <Route path="/company" component={Company} />
           <Route path="/press" component={Press} />
-          <Route path="/relations" component={Relations} />
+          <Route path="/relations" component={Relations} /> 
         </div>
       </HashRouter>
     );

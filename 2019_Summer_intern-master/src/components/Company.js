@@ -139,19 +139,22 @@ class Home extends Component {
                 <div>
                   {/* Title */}
                   <h2 className="h2-sm">
-                    Anxiety to Safety. <br /> Volatility to Stability. <br />{" "}
-                    Inefficiency to Efficiency.
+                    지나갔지만 추억하면 <br /> 애뜻한 기억들 <br />{" "}
+                    소중한 사람과 함께 기록해 보아요.
                   </h2>
                   {/* Text */}
                   <p className="p-3xl p-font-MyriadProRegular p-top-20">
-                    We are a digital wealth management company that provides an
-                    all-in-one solution for digital asset management. We offer
-                    solutions for the entire financial life cycle of our users:
-                    from accumulation to legacy planning. Our aim is to provide
-                    stable, safe and efficient financial planning. Our services,
-                    represented by planets in the universe, are forms of our
-                    unique digital wealth management solutions, aimed at
-                    providing a better financial ecosystem for all.
+                    정말 소중한 기억들. 우리끼리만 공유하고 싶은 추억들. 
+                    <br/>
+                    우추남에서 함께 기록해보아요.
+                    <br/>
+                    웹페이지에서 공유 폴더를 만들고 우리끼리만 알 수 있는 비밀번호를 
+                    <br/>
+                    설정할 수 있습니다.
+                    <br/>
+                    업로드 된 사진은 시간 순으로 자동 정렬되고 검색 기능이 있으니
+                    <br/>
+                    걱정하지 마세요!
                   </p>
                 </div>
               </div>{" "}
@@ -160,7 +163,7 @@ class Home extends Component {
               <div className="col-md-4 p-left-10 hero-img m-bottom-30">
                 <img
                   className="img-fluid p-bottom-10 offset-1_5 offset-left-0_R CompanyImage gifSize animated fadeIn visible"
-                  src={require("./images/animated-TRV-logo.gif")}
+                  src={require("./images/animatedcamera.gif")}
                   alt="hero-image"
                 />
               </div>

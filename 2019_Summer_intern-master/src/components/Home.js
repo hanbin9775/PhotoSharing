@@ -122,7 +122,7 @@ class Home extends Component {
                 <div className="p-right-0 p-left-0">
                   <img
                     className="img-fluid offset-0_5"
-                    src={require("./images/homeImage/Home_Introduction-and-Architecture_14Aug.png")}
+                    src={require("./images/homeImage/ourtime.png")}
                     alt="hero-image"
                     width={1300}
                   />
@@ -132,11 +132,12 @@ class Home extends Component {
             {/* End container */}
             <div className="container p-left-0 ">
               <h3 className="h3-xs animated fadeInUp visible hero-img">
-                Digital
                 <br />
-                Photo Sharing
+                사진 공유 
                 <br />
-                Management
+                관리 서비스
+                <br />
+                
               </h3>
             </div>
           </section>{" "}

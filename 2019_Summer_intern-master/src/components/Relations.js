@@ -59,12 +59,12 @@ handleUpload = () => {
     rootRef.child('users').child('dir').once('value', function(data){
       console.log('1번 :' , data.val());
     });
-  
+  /*
     var database = firebase.database();
     var dirname="images2"; //이름
     var passwd="123";
     var count;
-
+    
     firebase.database().ref('size/1').once('value').then(function(snapshot) {
       database.ref('size/1').set({"num": snapshot.val().num+1});  
       count = snapshot.val().num+1;
@@ -75,7 +75,7 @@ handleUpload = () => {
 
 
     });
-    
+    */
     /*
     
       while(i<count){

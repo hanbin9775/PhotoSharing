@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Home from "./components/Home";
-import Service from "./components/Services";
 import Company from "./components/Company";
 import Press from "./components/Press";
 import Relations from "./components/Relations";
@@ -13,10 +12,9 @@ class App extends Component {
       <HashRouter>
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/services" component={Service} />
           <Route path="/company" component={Company} />
           <Route path="/press" component={Press} />
-          <Route path="/relations" component={Relations} /> 
+          <Route path="/relations" component={Relations} />
         </div>
       </HashRouter>
     );

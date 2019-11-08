@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
+import FloatingButton from "./floatingButton";
 import Footers from "./footer";
 
 class Home extends Component {
@@ -23,11 +24,12 @@ class Home extends Component {
         {/* RESPONSIVE CSS */}
         <link href={require("./css/responsive.css")} rel="stylesheet" />
         {/* PAGE CONTENT
-		============================================= */}   
+		============================================= */}
         <div id="page" className="page">
           {/* HEADER
 			============================================= */}
           <MainNav />
+          <FloatingButton />
         </div>{" "}
         {/* PRESS-1
 			============================================= */}
@@ -249,6 +251,23 @@ class Home extends Component {
                       </a>
                     </div>
                   </div>
+
+                  {/* 폴더 추가 아이콘 생성 */}
+                  <div className="col-sm-6 col-md-6">
+                    <div className="press-logo">
+                      <a
+                        href="http://www.fnnews.com/news/201907211835255908"
+                        target="_blank"
+                      >
+                        <img
+                          className="img-fluid"
+                          src={require("./images/press/Press_Box_NEW_Article1.png")}
+                          alt="press-logo"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  {/* 여기까지 */}
                 </div>{" "}
                 {/* End row */}
               </div>{" "}
@@ -263,21 +282,13 @@ class Home extends Component {
           <div className="row d-flex align-items-center">
             {/* HERO IMAGE */}
             <div className="col-md-12">
-              <div className="hero-img">
-                <img
-                  className="img-fluid"
-                  src={require("./images/press/Press-Media-Logos_1400x70px-8Aug.png")}
-                  alt="hero-image"
-                />
-              </div>
+              <div className="hero-img"></div>
             </div>
           </div>{" "}
         </div>
         {/* FOOTER-2
 			============================================= */}
-        <div className="bottom p-top-0">
-          <Footers />
-        </div>{" "}
+        <div className="bottom p-top-0">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
     );

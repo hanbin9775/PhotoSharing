@@ -52,7 +52,6 @@ handleUpload = () => {
     };
     return (
       <div>
-        
         {/* BOOTSTRAP CSS */}
         <link href={require("./css/bootstrap.min.css")} rel="stylesheet" />
         {/* FONT ICONS */}
@@ -287,20 +286,15 @@ handleUpload = () => {
         <br />
         {/* RELATIONs
 			============================================= */}
-        
         <br />
         <br />
-        
         {/* END BRANDS-1 */}
         <br />
         <br />
-        
         {/* END BRANDS-1 */}
         <br />
         <br />
-        <div className="bottom">
-          <Footers />
-        </div>{" "}
+        <div className="bottom">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
     );

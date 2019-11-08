@@ -116,30 +116,6 @@ class MainNav extends Component {
                   >
                     <Link2
                       className="nav-item nl-simple nav-link"
-                      to="/services"
-                    >
-                      <Link
-                        activeClass="active"
-                        to="page"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                      >
-                        <Link2 to="/services">{this.props.Text1}</Link2>
-                      </Link>
-                    </Link2>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    activeClass="active"
-                    to="page"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                  >
-                    <Link2
-                      className="nav-item nl-simple nav-link"
                       to="/company"
                     >
                       <Link
@@ -149,7 +125,7 @@ class MainNav extends Component {
                         smooth={true}
                         duration={500}
                       >
-                        <Link2 to="/company">{this.props.Text2}</Link2>
+                        <Link2 to="/company">Introduce Members</Link2>
                       </Link>
                     </Link2>
                   </Link>
@@ -170,7 +146,7 @@ class MainNav extends Component {
                         smooth={true}
                         duration={500}
                       >
-                        <Link2 to="/press">{this.props.Text3}</Link2>
+                        <Link2 to="/press">Directoty</Link2>
                       </Link>
                     </Link2>
                   </Link>
@@ -194,21 +170,9 @@ class MainNav extends Component {
                         smooth={true}
                         duration={500}
                       >
-                        <Link2 to="/relations">{this.props.Text4}</Link2>
+                        <Link2 to="/relations">Upload</Link2>
                       </Link>
                     </Link2>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    activeClass="active"
-                    className="nav-item nl-simple nav-link"
-                    to="bottom"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                  >
-                    <a href="">{this.props.Text5}</a>
                   </Link>
                 </li>
               </ul>

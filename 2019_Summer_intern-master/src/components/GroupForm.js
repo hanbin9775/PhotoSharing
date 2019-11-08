@@ -31,6 +31,7 @@ class GroupForm extends Component {
           onChange={this.handleChange}
           name="name"
         />
+        &nbsp;&nbsp;&nbsp;
         <input
           type="password"
           placeholder="비밀번호"
@@ -38,6 +39,7 @@ class GroupForm extends Component {
           onChange={this.handleChange}
           name="password"
         />
+        &nbsp;&nbsp;
         <button type="submit">등록</button>
       </form>
     );

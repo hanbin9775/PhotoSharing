@@ -1,18 +1,7 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
-<<<<<<< HEAD
-import FloatingButton from "./floatingButton";
-import Buttons from "./Buttons";
-import CounterListContainer from "./containers/CounterListContainer";
-
-import { connect } from "react-redux";
-import * as actions from "../actions";
-
-import Footers from "./footer";
-=======
 import GroupForm from "./GroupForm";
 import GroupInfoList from "./GroupInfoList";
->>>>>>> b3be1c1cde615f53be936625d3f5ab18c2194f99
 
 class directory extends Component {
   id = 2;
@@ -60,14 +49,10 @@ class directory extends Component {
     });
   };
   render() {
-<<<<<<< HEAD
-    const { onCreate } = this.props;
-=======
     const { information, keyword } = this.state;
     const filteredList = information.filter(
       info => info.name.indexOf(keyword) !== -1
     );
->>>>>>> b3be1c1cde615f53be936625d3f5ab18c2194f99
     return (
       <div>
         {/* BOOTSTRAP CSS */}

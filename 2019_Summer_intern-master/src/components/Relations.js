@@ -3,6 +3,7 @@ import MainNav from "./mainNav";
 import Footers from "./footer";
 import {storage} from '../firebase';
 import firebase from 'firebase';
+import { equal } from "assert";
 
 class Relations extends Component {  
   constructor(props) {
@@ -54,18 +55,54 @@ handleUpload = () => {
       alignItems: 'center',
       justifyContent: 'center'
     };
-    
     var rootRef = firebase.database().ref();
     rootRef.child('users').child('dir').once('value', function(data){
       console.log('1번 :' , data.val());
     });
   
     var database = firebase.database();
+    var dirname="images2"; //이름
+    var passwd="123";
+    var count;
+
+    firebase.database().ref('size/1').once('value').then(function(snapshot) {
+      database.ref('size/1').set({"num": snapshot.val().num+1});  
+      count = snapshot.val().num+1;
+      alert(count);
+      
+    database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
+
+
+
+    });
     
-    database.ref('users/').child('dir').push({"dirname": "images2", "passwd": "123"});
+    /*
     
+      while(i<count){
+        firebase.database().ref('users/'+i).once('value').then(function(snapshot) {
+        alert(snapshot.val().dirname);
+        if(dirname == snapshot.val().dirname){
+          alert("겹치는 그룹명이 존재합니다!");
+          booliden = false;
+        }
+        })
+        i++;
+     }
+  
     
+    if(booliden == true){
+      database.ref('users/').child('dir').push("dirname" : dirname, "passwd": 1234)  ;
+    }
+
+    database.ref('size/1').set({"num": count});
+    }
+
     
+    var userId = firebase.auth().currentUser.uid;
+return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+  // ...
+});*/
     return (
       <div>
         {/* BOOTSTRAP CSS */}

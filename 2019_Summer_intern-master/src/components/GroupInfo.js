@@ -1,5 +1,20 @@
 import React, { Component } from "react";
 
+import styled, {keyframes} from "styled-components";
+
+
+
+const Container = styled.div`
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  background-position: center;
+  height: 130px;
+  width: 500px;
+  position: relative;
+  border : 2px solid gray;
+`;
+
+
 class GroupInfo extends Component {
   static defaultProps = {
     info: {
@@ -80,7 +95,6 @@ class GroupInfo extends Component {
 
   render() {
     const style = {
-      border: "1px solid black",
       padding: "8px",
       margin: "8px"
     };
@@ -90,6 +104,7 @@ class GroupInfo extends Component {
     if (editing) {
       // 수정모드
       return (
+        <Container>
         <div style={style}>
           <div>
             <input
@@ -108,9 +123,10 @@ class GroupInfo extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <button onClick={this.handleToggleEdit}>적용</button>
-          <button onClick={this.handleRemove}>삭제</button>
+          <div className="btn" onClick={this.handleToggleEdit}>적용</div>
+          <div className="btn" onClick={this.handleRemove}>삭제</div>
         </div>
+        </Container>
       );
     }
 
@@ -118,17 +134,19 @@ class GroupInfo extends Component {
     const { name, password } = this.props.info;
 
     return (
+      <Container>
       <div style={style} className="p-font-MiSaeng">
         <div>
           <h1> {name}</h1>
         </div>
         {/* <div>{password}</div> */}
         <h4>
-          <button onClick={this.handleToggleEdit}>수정</button>
+          <div className="btn" onClick={this.handleToggleEdit}>수정</div>
           &nbsp;
-          <button onClick={this.handleRemove}>삭제</button>
+          <div className="btn" onClick={this.handleRemove}>삭제</div>
         </h4>
       </div>
+      </Container>
     );
   }
 }

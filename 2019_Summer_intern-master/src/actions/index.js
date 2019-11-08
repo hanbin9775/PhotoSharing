@@ -1,11 +1,13 @@
 import * as types from "./ActionTypes";
 
+
 export function setKOR(text) {
   return {
     type: types.SET_KOR,
     text // title: title
   };
 }
+////
 
 // export function setKOR_Footer_Language() {
 //   return {

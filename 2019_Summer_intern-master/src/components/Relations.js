@@ -6,7 +6,7 @@ class Relations extends Component {
   render() {
     return (
       <div>
-        Company!
+        
         {/* BOOTSTRAP CSS */}
         <link href={require("./css/bootstrap.min.css")} rel="stylesheet" />
         {/* FONT ICONS */}
@@ -37,6 +37,10 @@ class Relations extends Component {
         <br />
         <br />
         <br />
+        <div>
+          <h1>upload</h1>
+
+        </div>
         {/* PARTNERs
 			============================================= */}
         <div id="brands-2" className="brands-section division">
@@ -53,6 +57,8 @@ class Relations extends Component {
             </div>{" "}
             {/* END SECTION TITLE */}
             {/* BRANDS-1
+
+
 			============================================= */}
             <div className="row">
               <div className="col-sm-6 col-md-3">
@@ -228,229 +234,14 @@ class Relations extends Component {
         <br />
         {/* RELATIONs
 			============================================= */}
-        <div id="brands-2" className="brands-section division">
-          <div className="container">
-            {/* SECTION TITLE */}
-            <div className="row">
-              <div className="col-md-3 section-title logo_R_Rel p-bottom-10">
-                {/* Title 	*/}
-                <img
-                  className="img-fluid"
-                  src={require("./images/C_R_Icon/Alliances_742x257px.png")}
-                />
-              </div>
-            </div>{" "}
-            {/* END SECTION TITLE */}
-            <div className="row">
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo3">
-                  <a href="https://cointelegraph.com/" target="_blank">
-                    <img
-                      className="img-fluid"
-                      src={require("./images/relations/Alliances_Cointelegraph_BW.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/relations/Alliances_Cointelegraph_Colour.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo3">
-                  <a href="https://kr.cointelegraph.com/" target="_blank">
-                    <img
-                      className="img-fluid"
-                      src={require("./images/relations/Cointelegraph_Korea_BW.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/relations/Cointelegraph_Korea.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo4">
-                  <a href="https://factblock.com/#/" target="_blank">
-                    <img
-                      className="img-fluid"
-                      src={require("./images/relations/Alliances_Factblock_BW.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/relations/Alliances_Factblock_Colour.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>{" "}
-            {/* End row */}
-          </div>
-        </div>
+        
         <br />
         <br />
-        {/* EXCHANGEs
-			============================================= */}
-        <div id="brands-2" className="brands-section division">
-          <div className="container">
-            {/* SECTION TITLE */}
-            <div className="row">
-              <div className="col-md-3 section-title logo_R_Rel p-bottom-10">
-                {/* Title 	*/}
-                <img
-                  className="img-fluid"
-                  src={require("./images/C_R_Icon/Relations_742x257px.png")}
-                />
-              </div>
-            </div>{" "}
-            {/* END SECTION TITLE */}
-            <div className="row">
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo3">
-                  <a
-                    href="https://xangle.io/project/home/TRV/Company"
-                    target="_blank"
-                  >
-                    <img
-                      className="img-fluid"
-                      src={require("./images/relations/3_x.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/relations/3_x_c.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo3">
-                  <a
-                    href="https://coinmarketcap.com/currencies/trustverse/"
-                    target="_blank"
-                  >
-                    <img
-                      className="img-fluid"
-                      src={require("./images/relations/1_C.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/relations/1_C_c.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo3">
-                  <a
-                    href="https://www.coinhills.com/market/trv/"
-                    target="_blank"
-                  >
-                    <img
-                      className="img-fluid"
-                      src={require("./images/relations/2_h.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/relations/2_h_c.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>{" "}
-          {/* End container */}
-        </div>{" "}
+        
         {/* END BRANDS-1 */}
         <br />
         <br />
-        <div id="brands-2" className="brands-section division">
-          <div className="container">
-            {/* SECTION TITLE */}
-            <div className="row">
-              <div className="col-md-3 section-title logo_R_Rel p-bottom-10">
-                {/* Title 	*/}
-                <img
-                  className="img-fluid"
-                  src={require("./images/C_R_Icon/Exchanges_900x257.png")}
-                />
-              </div>
-            </div>{" "}
-            {/* END SECTION TITLE */}
-            {/* BRANDS-1
-			============================================= */}
-            <div className="row">
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo3">
-                  <a
-                    href="https://www.bithumb.pro/ko-kr/spot/trade;symbol=TRV_BTC"
-                    target="_blank"
-                  >
-                    <img
-                      className="img-fluid"
-                      src={require("./images/PARTNERSHIP/Bithumb Global_Logo1.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/PARTNERSHIP/Bithumb Global_Logo.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo4">
-                  <a href="https://cobinhood.com/trade/TRV-BTC" target="_blank">
-                    <img
-                      className="img-fluid"
-                      src={require("./images/PARTNERSHIP//cobinhood1.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/PARTNERSHIP//cobinhood.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="col-sm-6 col-md-3">
-                <div className="press-logo5">
-                  <a
-                    href="https://bitsonic.co.kr/front/exchange/trv-krw"
-                    target="_blank"
-                  >
-                    <img
-                      className="img-fluid"
-                      src={require("./images/PARTNERSHIP/bitsonic logo1.png")}
-                      alt="press-logo"
-                    />
-                    <img
-                      className="img-color"
-                      src={require("./images/PARTNERSHIP//bitsonic logo.png")}
-                      alt="press-logo"
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>{" "}
-            {/* End row */}
-          </div>{" "}
-          {/* End container */}
-        </div>{" "}
+        
         {/* END BRANDS-1 */}
         <br />
         <br />

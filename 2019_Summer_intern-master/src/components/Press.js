@@ -23,7 +23,7 @@ class Home extends Component {
         {/* RESPONSIVE CSS */}
         <link href={require("./css/responsive.css")} rel="stylesheet" />
         {/* PAGE CONTENT
-		============================================= */}
+		============================================= */}   
         <div id="page" className="page">
           {/* HEADER
 			============================================= */}

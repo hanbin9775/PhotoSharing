@@ -1,48 +1,46 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
 import Footers from "./footer";
-import { storage } from "../firebase";
-import firebase from "firebase";
+import {storage} from '../firebase';
+import firebase from 'firebase';
 import { equal } from "assert";
 
-window.n1=0;
-window.k=0;
 class Relations extends Component {  
   constructor(props) {
     super(props);
 
     this.state = {
-      groupName: "",
       image: null,
-      url: "gs://photosharing-7553c.appspot.com",
+      groupName: "",
+      url: 'gs://photosharing-7553c.appspot.com',
       progress: 0
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
-  }
-  handleChange = e => {
-    if (e.target.files[0]) {
-      const image = e.target.files[0];
-      this.setState(() => ({ image }));
     }
-  };
-  handleChange2 = e => {
-    this.setState({
-      groupName: e.target.value
-    });
-  };
-  handleUpload = () => {
-    const { image } = this.state;
+  this.handleChange = this
+    .handleChange
+    .bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+}
+handleChange = e => {
+  if (e.target.files[0]) {
+    const image = e.target.files[0];
+    this.setState(() => ({image}));
+  }
+}
+handleChange2 = e => {
+  this.setState({
+    groupName: e.target.value
+  });
+};
+handleUpload = () => {
+    const {image} = this.state;
     const uploadTask = storage.ref(`images2/${image.name}`).put(image);
     ////
     window.n1 = image.name;
-    alert(window.n1);
     ////
     uploadTask.on('state_changed', 
     (snapshot) => {
       /* progrss function ....*/
       const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-      alert(image.name);
       
       this.setState({progress});
       
@@ -62,32 +60,35 @@ class Relations extends Component {
 
   render() {
     const style = {
-      height: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center"
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
     };
   
     var database = firebase.database();
-    var dirname = "images2"; //이름
-    var passwd = "123";
+    var dirname="images2"; //이름
+    var passwd="123";
     var count;
-
-    firebase
-      .database()
-      .ref("size/1")
-      .once("value")
-      .then(function(snapshot) {
-        database.ref("size/1").set({ num: snapshot.val().num + 1 });
-        count = snapshot.val().num + 1;
-        alert(count);
-
-        database
-          .ref("users/" + count)
-          .set({ dirname: dirname, passwd: passwd });
-      });
-
+    var count2;
+    firebase.database().ref('size/1').once('value').then(function(snapshot) {
+      database.ref('size/1').set({"num": snapshot.val().num+1});  
+      count = snapshot.val().num+1;
+      
+    database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
+    });
+    
+    firebase.database().ref('size2/1').once('value').then(function(snapshot) {      
+      if(window.n1 != 0 && window.k==0 && window.n2 != 0 && window.k2==0){
+        
+      database.ref('size2/1').set({"num": snapshot.val().num+1});  
+      count2 = snapshot.val().num+1;
+        database.ref('users2/'+count2).set({"title": window.n1, "groupName" : window.n2});
+        window.k++;
+        window.k2++;
+      }
+    });
     /*
     
       while(i<count){
@@ -104,8 +105,10 @@ class Relations extends Component {
     
     if(booliden == true){
       database.ref('users/').child('dir').push("dirname" : dirname, "passwd": 1234)  ;
-    }*/
-
+    }
+*/
+    window.n2=this.state.groupName;
+    
     return (
       <div>
         {/* BOOTSTRAP CSS */}
@@ -140,22 +143,22 @@ class Relations extends Component {
         <br />
         <section className="division">
           <div className="container p-left-0 align-items-center offset-top-8">
-            <div className="d-flex align-items-center img-fluid offset-1">
+            <div className="d-flex align-items-center img-fluid offset-2">
               {/* <progress value={this.state.progress} max="100" /> */}
               <br />
               <h1 className="p-font-MiSaeng m-bottom-0">
-                사진을 올려주세요! &nbsp;
+                사진을 올려주세요! &nbsp;&nbsp;
                 <input
                   type="group"
                   name="group"
                   // value={this.state.groupName}
+                  
                   onChange={this.handleChange2}
                   placeholder="그룹명"
                   size="7"
-                />
-                {this.state.groupName}
+    />
+                {/* {this.state.groupName} */}
               </h1>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <h2 className="p-font-MiSaeng m-bottom-0">
                 <input
                   className="button_YuChuNam p-font-MiSaeng"
@@ -180,6 +183,15 @@ class Relations extends Component {
             </div>
           </div>
         </section>
+        {/* PARTNERs
+			============================================= */}
+        
+     
+        {/* END BRANDS-1 */}
+        <br />
+        <br />
+        {/* RELATIONs
+			============================================= */}
         <br />
         <br />
         {/* END BRANDS-1 */}
@@ -188,7 +200,6 @@ class Relations extends Component {
         {/* END BRANDS-1 */}
         <br />
         <br />
-        <div className="bottom">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
       

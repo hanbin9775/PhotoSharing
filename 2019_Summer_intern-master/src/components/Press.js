@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import MainNav from "./mainNav";
 import GroupForm from "./GroupForm";
 import GroupInfoList from "./GroupInfoList";
-<<<<<<< HEAD
 import Footers from "./footer";
 import {storage} from '../firebase';
 import firebase from 'firebase';
 import { equal } from "assert";
 
-=======
->>>>>>> d036041ad35f1dd64ca01686a0c936ed92caaced
 
 class directory extends Component {
   id = 2;
@@ -67,23 +64,6 @@ class directory extends Component {
       info => info.name.indexOf(keyword) !== -1
     );
 
-    
-    var database = firebase.database();
-    var dirname="images2"; //이름
-    var passwd="123";
-    var count;
-
-    firebase.database().ref('size/1').once('value').then(function(snapshot) {
-      database.ref('size/1').set({"num": snapshot.val().num+1});  
-      count = snapshot.val().num+1;
-      alert(count);
-      
-    database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
-
-
-
-    });
-
 
     return (
       <div>
@@ -110,18 +90,18 @@ class directory extends Component {
           <MainNav />
         </div>{" "}
         <div className="container offset-top-8">
-          <div className="offset-0_5">
+          <div>
             <div className="m-left-20">
               <p>
                 <GroupForm onCreate={this.handleCreate} />
               </p>
-              <h3 className="p-font-MiSaeng m-bottom-0">
+              <p>
                 <input
                   placeholder="검색 할 이름을 입력하세요.."
                   onChange={this.handleChange}
                   value={keyword}
                 />
-              </h3>
+              </p>
             </div>
             <hr />
             <GroupInfoList

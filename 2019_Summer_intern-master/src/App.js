@@ -8,6 +8,11 @@ import GroupInfoList from "./components/GroupInfoList";
 import "./App.css";
 import { Route, HashRouter } from "react-router-dom";
 
+
+window.n1=0;
+window.k=0;
+window.n2=0;
+window.k2=0;
 class App extends Component {
   
   render() {

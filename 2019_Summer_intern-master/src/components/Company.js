@@ -133,7 +133,7 @@ class Home extends Component {
         <section className="bg-fixed hero-section division">
           <div className="container offset-top-8">
             {/* HERO CONTENT */}
-            <div className="row d-flex align-items-center m-left-10 offset-left-0_R">
+            <div className="row d-flex align-items-center offset-0_5 offset-left-0_R">
               {/* HERO TEXT */}
               <div className="col-md-8 p-right-0 p-left-0 offset-top-7 animated fadeIn visible">
                 <div>

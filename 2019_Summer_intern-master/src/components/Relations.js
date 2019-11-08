@@ -10,6 +10,7 @@ class Relations extends Component {
     super(props);
 
     this.state = {
+      groupName: "",
       image: null,
       url: "gs://photosharing-7553c.appspot.com",
       progress: 0
@@ -22,6 +23,11 @@ class Relations extends Component {
       const image = e.target.files[0];
       this.setState(() => ({ image }));
     }
+  };
+  handleChange2 = e => {
+    this.setState({
+      groupName: e.target.value
+    });
   };
   handleUpload = () => {
     const { image } = this.state;
@@ -133,12 +139,22 @@ class Relations extends Component {
         <br />
         <section className="division">
           <div className="container p-left-0 align-items-center offset-top-8">
-            <div className="d-flex align-items-center img-fluid offset-2">
+            <div className="d-flex align-items-center img-fluid offset-1">
               {/* <progress value={this.state.progress} max="100" /> */}
               <br />
               <h1 className="p-font-MiSaeng m-bottom-0">
-                사진을 올려주세요! &nbsp;&nbsp;
+                사진을 올려주세요! &nbsp;
+                <input
+                  type="group"
+                  name="group"
+                  // value={this.state.groupName}
+                  onChange={this.handleChange2}
+                  placeholder="그룹명"
+                  size="7"
+                />
+                {this.state.groupName}
               </h1>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <h2 className="p-font-MiSaeng m-bottom-0">
                 <input
                   className="button_YuChuNam p-font-MiSaeng"

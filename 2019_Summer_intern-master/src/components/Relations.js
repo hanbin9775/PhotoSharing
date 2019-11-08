@@ -1,76 +1,99 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
 import Footers from "./footer";
-import { storage } from "../firebase";
-import firebase from "firebase";
+import {storage} from '../firebase';
+import firebase from 'firebase';
+import { equal } from "assert";
 
-class Relations extends Component {
+class Relations extends Component {  
   constructor(props) {
     super(props);
 
     this.state = {
       image: null,
-      url: "gs://photosharing-7553c.appspot.com",
+      url: 'gs://photosharing-7553c.appspot.com',
       progress: 0
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
-  }
-  handleChange = e => {
-    if (e.target.files[0]) {
-      const image = e.target.files[0];
-      this.setState(() => ({ image }));
     }
-  };
-  handleUpload = () => {
-    const { image } = this.state;
+  this.handleChange = this
+    .handleChange
+    .bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+}
+handleChange = e => {
+  if (e.target.files[0]) {
+    const image = e.target.files[0];
+    this.setState(() => ({image}));
+  }
+}
+handleUpload = () => {
+    const {image} = this.state;
     const uploadTask = storage.ref(`images2/${image.name}`).put(image);
-    uploadTask.on(
-      "state_changed",
-      snapshot => {
-        // progrss function ....
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        this.setState({ progress });
-      },
-      error => {
-        // error function ....
-        console.log(error);
-      },
-      () => {
-        // complete function ....
-        storage
-          .ref("images2")
-          .child(image.name)
-          .getDownloadURL()
-          .then(url => {
-            console.log(url);
-            this.setState({ url });
-          });
-      }
-    );
-  };
+    uploadTask.on('state_changed', 
+    (snapshot) => {
+      // progrss function ....
+      const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      this.setState({progress});
+    }, 
+    (error) => {
+         // error function ....
+      console.log(error);
+    }, 
+  () => {
+      // complete function ....
+      storage.ref('images2').child(image.name).getDownloadURL().then(url => {
+          console.log(url);
+          this.setState({url});
+      })
+  });
+}
 
   render() {
     const style = {
-      height: "100vh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center"
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
     };
-
     var rootRef = firebase.database().ref();
-    rootRef
-      .child("users")
-      .child("dir")
-      .once("value", function(data) {
-        console.log("1번 :", data.val());
-      });
-
+    rootRef.child('users').child('dir').once('value', function(data){
+      console.log('1번 :' , data.val());
+    });
+  
     var database = firebase.database();
+    var dirname="images2"; //이름
+    var passwd="123";
+    var count;
 
+    firebase.database().ref('size/1').once('value').then(function(snapshot) {
+      database.ref('size/1').set({"num": snapshot.val().num+1});  
+      count = snapshot.val().num+1;
+      alert(count);
+      
+    database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
+
+
+
+    });
+    
+    /*
+    
+      while(i<count){
+        firebase.database().ref('users/'+i).once('value').then(function(snapshot) {
+        alert(snapshot.val().dirname);
+        if(dirname == snapshot.val().dirname){
+          alert("겹치는 그룹명이 존재합니다!");
+          booliden = false;
+        }
+        })
+        i++;
+     }
+  
+    
+    if(booliden == true){
+      database.ref('users/').child('dir').push("dirname" : dirname, "passwd": 1234)  ;
+    }
+    */
     return (
       <div>
         {/* BOOTSTRAP CSS */}
@@ -135,11 +158,16 @@ class Relations extends Component {
             </div>
           </div>
         </section>
-        {/* PARTNERs
-			============================================= */}
-        {/* BRANDS-1
 
-
+        <br />
+        <br />
+        {/* END BRANDS-1 */}
+        <br />
+        <br />
+        {/* END BRANDS-1 */}
+        <br />
+        <br />
+        <div className="bottom">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
     );

@@ -137,7 +137,7 @@ class GroupInfo extends Component {
       <Container>
       <div style={style} className="p-font-MiSaeng">
         <div>
-          <h1> {name}</h1>
+          <h1>{name}</h1>
         </div>
         {/* <div>{password}</div> */}
         <h4>

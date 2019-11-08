@@ -3,8 +3,6 @@ import MainNav from "./mainNav";
 import GroupForm from "./GroupForm";
 import GroupInfoList from "./GroupInfoList";
 
-
-
 class directory extends Component {
   id = 2;
   state = {
@@ -85,13 +83,13 @@ class directory extends Component {
               <p>
                 <GroupForm onCreate={this.handleCreate} />
               </p>
-              <p>
+              <h3 className="p-font-MiSaeng m-bottom-0">
                 <input
                   placeholder="검색 할 이름을 입력하세요.."
                   onChange={this.handleChange}
                   value={keyword}
                 />
-              </p>
+              </h3>
             </div>
             <hr />
             <GroupInfoList

@@ -1,26 +1,25 @@
 import React, { Component } from "react";
+import Popup from "reactjs-popup";
 import "./floatingButton.css";
 
-class floatingButton extends Component {
-  handleOnClick = () => {
-    console.log("Click");
-  };
-  render() {
-    return (
-      <div className="floatBox">
-        <div className="floatBtn">
-          <button onClick={this.handleOnClick}>
-            <img
-              src={require("../components/images/eng-tele.png")}
-              alt="hero-image"
-              width={90}
-            />
-          </button>
-        </div>
-      </div>
-    );
-  }
-}
+const floatingButton = () => (
+  <Popup
+    trigger={open => <button className="button"> Add </button>}
+    position="bottom right"
+    modal
+    closeOnDocumentClick
+  >
+    <span>{<input type="text" placeholder="Folder Name " />}</span>
+    <span>{<input type="text" placeholder="Password" />}</span>
+    <div className="actions">
+      <Popup
+        trigger={<button className="button"> Submit </button>}
+        position="bottom right"
+        closeOnDocumentClick
+      ></Popup>
+    </div>
+  </Popup>
+);
 
 // const Buttons = ({ onCreate }) => {
 //   return (

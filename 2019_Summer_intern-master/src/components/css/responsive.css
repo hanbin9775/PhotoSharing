@@ -920,7 +920,7 @@
   }
 
   .gifSize {
-    max-width: 48%
+    max-width: 100%
   }
 
   .col-md-4_footer {
@@ -1303,7 +1303,7 @@
     /*------------------------------------------*/
 
   .navbar-expand-lg .navbar-nav .nav-link {
-    font-size: 1.1rem;
+    font-size: 2rem;
     padding: 0.65rem 1.25rem;
   }
 

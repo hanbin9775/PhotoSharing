@@ -1,13 +1,60 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
-import FloatingButton from "./floatingButton";
-import Footers from "./footer";
+import GroupForm from "./GroupForm";
+import GroupInfoList from "./GroupInfoList";
 
-class Home extends Component {
+class directory extends Component {
+  id = 2;
+  state = {
+    information: [
+      {
+        id: 0,
+        name: "김민준",
+        password: "1234"
+      },
+      {
+        id: 1,
+        name: "홍길동",
+        password: "2345"
+      }
+    ],
+    keyword: ""
+  };
+  handleChange = e => {
+    this.setState({
+      keyword: e.target.value
+    });
+  };
+  handleCreate = data => {
+    const { information } = this.state;
+    this.setState({
+      information: information.concat({ id: this.id++, ...data })
+    });
+  };
+  handleRemove = id => {
+    const { information } = this.state;
+    this.setState({
+      information: information.filter(info => info.id !== id)
+    });
+  };
+  handleUpdate = (id, data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.map(
+        info =>
+          id === info.id
+            ? { ...info, ...data } // 새 객체를 만들어서 기존의 값과 전달받은 data 을 덮어씀
+            : info // 기존의 값을 그대로 렌더링
+      )
+    });
+  };
   render() {
+    const { information, keyword } = this.state;
+    const filteredList = information.filter(
+      info => info.name.indexOf(keyword) !== -1
+    );
     return (
       <div>
-        Press!
         {/* BOOTSTRAP CSS */}
         <link href={require("./css/bootstrap.min.css")} rel="stylesheet" />
         {/* FONT ICONS */}
@@ -29,270 +76,28 @@ class Home extends Component {
           {/* HEADER
 			============================================= */}
           <MainNav />
-          <FloatingButton />
         </div>{" "}
-        {/* PRESS-1
-			============================================= */}
-        <div id="press-1" className="wide-100 press-section division">
-          <div className="container">
-            {/* BRANDS-1
-			============================================= */}
-            <div id="brands-1" className="brands-section division">
-              <div className="container">
-                <div className="row">
-                  {/* BRAND LOGO IMAGE */}
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://cointelegraph.com/news/samsung-expands-its-blockchain-dapp-kit-with-new-services-updates-wallet"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article4NEW.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.fnnews.com/news/201907211835255908"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_NEW_Article1.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.zdnet.co.kr/view/?no=20190719173928"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_NEW_Article2.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.mk.co.kr/news/economy/view/2019/07/506538/"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_NEW_Article3.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.zdnet.co.kr/view/?no=20181212175649"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Article1_370x135.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.forbes.com/sites/ginaclarke/2018/11/27/latest-crypto-crash-caused-by-bitcoin-civil-war-say-experts/#62e81efc3c6c"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Article2_370x135_Forbes.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.korea.kr/briefing/pressReleaseView.do?newsId=156304607"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article3_MSICT.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.chipin.com/could-blockchain-lower-risk-investing/"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article4_Chipin.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.investing.com/analysis/managed-portfolios-might-succeed-in-ending-wall-streets-scepticism-of-cryptocurre-200351388"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article5_Investingcom.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.investopedia.com/tech/taxes-and-crypto/"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article6_Investopedia.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.thestreet.com/investing/bitcoin/bitcoin-price-predictions-14750530"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article7_TheStreet.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://finance.yahoo.com/news/3-innovative-solutions-seamless-inheritance-105605673.html"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article8_Yahoo.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://biz.chosun.com/site/data/html_dir/2018/10/18/2018101802663.html"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Article9.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.fnnews.com/news/201809172102523125"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article10_TBP.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.sedaily.com/NewsView/1S0R6APOH1"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article11_SED.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* 폴더 추가 아이콘 생성 */}
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.fnnews.com/news/201907211835255908"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_NEW_Article1.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  {/* 여기까지 */}
-                </div>{" "}
-                {/* End row */}
-              </div>{" "}
-              {/* End container */}
-            </div>{" "}
-            {/* END BRANDS-1 */}
-          </div>{" "}
-          {/* End container */}
-        </div>{" "}
-        {/* END PRESS-1 */}
-        <div className="container">
-          <div className="row d-flex align-items-center">
-            {/* HERO IMAGE */}
-            <div className="col-md-12">
-              <div className="hero-img"></div>
-            </div>
-          </div>{" "}
+        <div className="container offset-top-8">
+          <div>
+            <GroupForm onCreate={this.handleCreate} />
+            <p>
+              <input
+                placeholder="검색 할 이름을 입력하세요.."
+                onChange={this.handleChange}
+                value={keyword}
+              />
+            </p>
+            <hr />
+            <GroupInfoList
+              data={filteredList}
+              onRemove={this.handleRemove}
+              onUpdate={this.handleUpdate}
+            />
+          </div>
         </div>
-        {/* FOOTER-2
-			============================================= */}
-        <div className="bottom p-top-0">{/* <Footers /> */}</div>{" "}
-        {/* END PAGE CONTENT */}
       </div>
     );
   }
 }
 
-export default Home;
+export default directory;

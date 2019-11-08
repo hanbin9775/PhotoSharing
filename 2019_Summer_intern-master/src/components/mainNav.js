@@ -227,19 +227,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchProps = dispatch => {
-  // return bindActionCreators(actions, dispatch);
-  return {
-    handleSetKOR: text => {
-      dispatch(actions.setKOR(text));
-    },
-    handleSetENG: text => {
-      dispatch(actions.setENG(text));
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchProps
-)(MainNav);
+export default MainNav;

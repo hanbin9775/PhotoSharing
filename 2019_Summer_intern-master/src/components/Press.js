@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
 import FloatingButton from "./floatingButton";
+import Buttons from "./Buttons";
+import CounterListContainer from "./containers/CounterListContainer";
+
+import { connect } from "react-redux";
+import * as actions from "../actions";
+
 import Footers from "./footer";
 
 class Home extends Component {
   render() {
+    const { onCreate } = this.props;
     return (
       <div>
         Press!
@@ -29,7 +36,20 @@ class Home extends Component {
           {/* HEADER
 			============================================= */}
           <MainNav />
-          <FloatingButton />
+          <br />
+          <br />
+          <br />
+          {/* <FloatingButton /> */}
+          <div className="App">
+            <Buttons onCreate={onCreate} />
+            <div id="brands-1" className="brands-section division">
+              <div className="container">
+                <div className="row hero-img">
+                  <CounterListContainer />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>{" "}
         {/* PRESS-1
 			============================================= */}
@@ -42,18 +62,21 @@ class Home extends Component {
                 <div className="row">
                   {/* BRAND LOGO IMAGE */}
                   <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
+                    <div className="press-logo m-bottom-10">
                       <a
                         href="https://cointelegraph.com/news/samsung-expands-its-blockchain-dapp-kit-with-new-services-updates-wallet"
                         target="_blank"
                       >
                         <img
                           className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article4NEW.png")}
+                          src={require("./images/press/Press_Box_NEW_Article1.png")}
                           alt="press-logo"
                         />
                       </a>
                     </div>
+                    <h3 className="h3-xs animated fadeInUp visible hero-img">
+                      Group 1
+                    </h3>
                   </div>
                   <div className="col-sm-6 col-md-6">
                     <div className="press-logo">
@@ -139,134 +162,7 @@ class Home extends Component {
                       </a>
                     </div>
                   </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.chipin.com/could-blockchain-lower-risk-investing/"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article4_Chipin.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.investing.com/analysis/managed-portfolios-might-succeed-in-ending-wall-streets-scepticism-of-cryptocurre-200351388"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article5_Investingcom.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.investopedia.com/tech/taxes-and-crypto/"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article6_Investopedia.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://www.thestreet.com/investing/bitcoin/bitcoin-price-predictions-14750530"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article7_TheStreet.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="https://finance.yahoo.com/news/3-innovative-solutions-seamless-inheritance-105605673.html"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article8_Yahoo.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://biz.chosun.com/site/data/html_dir/2018/10/18/2018101802663.html"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Article9.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.fnnews.com/news/201809172102523125"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article10_TBP.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.sedaily.com/NewsView/1S0R6APOH1"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_Blank_Article11_SED.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
 
-                  {/* 폴더 추가 아이콘 생성 */}
-                  <div className="col-sm-6 col-md-6">
-                    <div className="press-logo">
-                      <a
-                        href="http://www.fnnews.com/news/201907211835255908"
-                        target="_blank"
-                      >
-                        <img
-                          className="img-fluid"
-                          src={require("./images/press/Press_Box_NEW_Article1.png")}
-                          alt="press-logo"
-                        />
-                      </a>
-                    </div>
-                  </div>
                   {/* 여기까지 */}
                 </div>{" "}
                 {/* End row */}
@@ -277,15 +173,6 @@ class Home extends Component {
           </div>{" "}
           {/* End container */}
         </div>{" "}
-        {/* END PRESS-1 */}
-        <div className="container">
-          <div className="row d-flex align-items-center">
-            {/* HERO IMAGE */}
-            <div className="col-md-12">
-              <div className="hero-img"></div>
-            </div>
-          </div>{" "}
-        </div>
         {/* FOOTER-2
 			============================================= */}
         <div className="bottom p-top-0">{/* <Footers /> */}</div>{" "}
@@ -295,4 +182,12 @@ class Home extends Component {
   }
 }
 
-export default Home;
+// export default Home;
+const mapToDispatch = dispatch => ({
+  onCreate: () => dispatch(actions.create())
+});
+
+export default connect(
+  null,
+  mapToDispatch
+)(Home);

@@ -130,6 +130,15 @@ class Home extends Component {
               </div>{" "}
             </div>{" "}
             {/* End container */}
+            <div className="container p-left-0 ">
+              <h3 className="h3-xs animated fadeInUp visible hero-img">
+                Digital
+                <br />
+                Photo Sharing
+                <br />
+                Management
+              </h3>
+            </div>
           </section>{" "}
           {/* END CONTENT-7 */}
           {/* </div>	 */}

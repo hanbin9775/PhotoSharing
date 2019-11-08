@@ -35,7 +35,7 @@ class Home extends Component {
                 <div className="row d-flex align-items-center">
                   <div className="col-md-5 offset-1 offset-left-0_R col-md-R">
                     <div className="">
-                      <h3 className="h3-xs animated fadeInUp visible">
+                      <h3 className="h3-xs animated fadeInUp visible align-items-center">
                         Digital Assets Analytics
                       </h3>
 

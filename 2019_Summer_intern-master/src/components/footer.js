@@ -460,14 +460,7 @@ const mapStateToProps = state => {
 
 const mapDispatchProps = dispatch => {
   // return bindActionCreators(actions, dispatch);
-  return {
-    handleSetKOR: text => {
-      dispatch(actions.setKOR(text));
-    },
-    handleSetENG: text => {
-      dispatch(actions.setENG(text));
-    }
-  };
+  return {};
 };
 
 export default connect(

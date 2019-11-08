@@ -86,7 +86,7 @@ class MainNav extends Component {
                 >
                   <Link2 to="/">
                     <img
-                      src={require("./images/logo_.png")}
+                      src={require("./images/uchu_logo.png")}
                       width={200}
                       height={40}
                       alt="header-logo"
@@ -125,7 +125,7 @@ class MainNav extends Component {
                         smooth={true}
                         duration={500}
                       >
-                        <Link2 to="/company">Introduce Members</Link2>
+                        <Link2 to="/company">소개</Link2>
                       </Link>
                     </Link2>
                   </Link>
@@ -146,7 +146,7 @@ class MainNav extends Component {
                         smooth={true}
                         duration={500}
                       >
-                        <Link2 to="/press">Directoty</Link2>
+                        <Link2 to="/press">디렉토리</Link2>
                       </Link>
                     </Link2>
                   </Link>
@@ -170,7 +170,7 @@ class MainNav extends Component {
                         smooth={true}
                         duration={500}
                       >
-                        <Link2 to="/relations">Upload</Link2>
+                        <Link2 to="/relations">업로드</Link2>
                       </Link>
                     </Link2>
                   </Link>
@@ -227,19 +227,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchProps = dispatch => {
-  // return bindActionCreators(actions, dispatch);
-  return {
-    handleSetKOR: text => {
-      dispatch(actions.setKOR(text));
-    },
-    handleSetENG: text => {
-      dispatch(actions.setENG(text));
-    }
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchProps
-)(MainNav);
+export default MainNav;

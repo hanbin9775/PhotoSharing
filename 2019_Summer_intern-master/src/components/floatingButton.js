@@ -21,4 +21,24 @@ const floatingButton = () => (
   </Popup>
 );
 
+// const Buttons = ({ onCreate }) => {
+//   return (
+//     <div className="Buttons">
+//       <div className="btn add" onClick={onCreate}>
+//         생성
+//       </div>
+//     </div>
+//   );
+// };
+
+// Buttons.propTypes = {
+//   onCreate: PropTypes.func
+// };
+
+// Buttons.defaultProps = {
+//   onCreate: () => console.warn("onCreate not defined")
+// };
+
+// export default Buttons;
+
 export default floatingButton;

@@ -5,11 +5,11 @@ import Press from "./components/Press";
 import Relations from "./components/Relations";
 import GroupForm from "./components/GroupForm";
 import GroupInfoList from "./components/GroupInfoList";
+import Folder from "./components/Folder";
 import "./App.css";
 import { Route, HashRouter } from "react-router-dom";
 
 class App extends Component {
-  
   render() {
     return (
       <HashRouter>
@@ -18,6 +18,7 @@ class App extends Component {
           <Route path="/company" component={Company} />
           <Route path="/press" component={Press} />
           <Route path="/relations" component={Relations} />
+          <Route path="/Folder" component={Folder} />
         </div>
       </HashRouter>
     );

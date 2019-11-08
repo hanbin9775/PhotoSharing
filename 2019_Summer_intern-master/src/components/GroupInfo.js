@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 
 import styled, { keyframes } from "styled-components";
-<<<<<<< HEAD
 import { storage } from "../firebase";
 import firebase from "firebase";
-=======
->>>>>>> d036041ad35f1dd64ca01686a0c936ed92caaced
+import { Link as Link2 } from "react-router-dom";
 
 const Container = styled.div`
   border-radius: 15px;
@@ -160,7 +158,9 @@ class GroupInfo extends Component {
       <Container>
         <div style={style} className="p-font-MiSaeng">
           <div>
-            <h1>{name}</h1>
+            <h1>
+              <Link2 to="/Folder">{name}</Link2>
+            </h1>
           </div>
           {/* <div>{password}</div> */}
           <h4>

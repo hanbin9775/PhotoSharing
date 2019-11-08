@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import MainNav from "./mainNav";
 import GroupForm from "./GroupForm";
 import GroupInfoList from "./GroupInfoList";
+import Footers from "./footer";
+import {storage} from '../firebase';
+import firebase from 'firebase';
+import { equal } from "assert";
+
 
 class directory extends Component {
   id = 2;
@@ -48,11 +53,18 @@ class directory extends Component {
       )
     });
   };
+
+
+
+
+  
   render() {
     const { information, keyword } = this.state;
     const filteredList = information.filter(
       info => info.name.indexOf(keyword) !== -1
     );
+
+
     return (
       <div>
         {/* BOOTSTRAP CSS */}
@@ -78,18 +90,18 @@ class directory extends Component {
           <MainNav />
         </div>{" "}
         <div className="container offset-top-8">
-          <div className="offset-0_5">
+          <div>
             <div className="m-left-20">
               <p>
                 <GroupForm onCreate={this.handleCreate} />
               </p>
-              <h3 className="p-font-MiSaeng m-bottom-0">
+              <p>
                 <input
                   placeholder="검색 할 이름을 입력하세요.."
                   onChange={this.handleChange}
                   value={keyword}
                 />
-              </h3>
+              </p>
             </div>
             <hr />
             <GroupInfoList

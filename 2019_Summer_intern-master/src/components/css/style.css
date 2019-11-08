@@ -110,6 +110,8 @@
   float: center;
 }
 
+
+
 /* ===========================================================================
    01. GENERAL & BASIC STYLES
    =========================================================================== */
@@ -1211,22 +1213,7 @@ a:focus {
 /*------------------------------------------*/
 
 .btn {
-  background-color: #e35029;
-  color: #fff;
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: 400;
-  letter-spacing: 0;
-  padding: 1rem 2rem;
-  border: 2px solid #e35029;
-  position: relative;
-  z-index: 2;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+  font-size : 30px;
 }
 
 .btn:before {

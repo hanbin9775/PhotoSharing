@@ -71,10 +71,6 @@ class Relations extends Component {
 
     var database = firebase.database();
 
-    database
-      .ref("users/")
-      .child("dir")
-      .push({ dirname: "images2", passwd: "123" });
 
     return (
       <div>

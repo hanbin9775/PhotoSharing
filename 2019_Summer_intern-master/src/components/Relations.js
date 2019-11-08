@@ -1,65 +1,80 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
 import Footers from "./footer";
-import {storage} from '../firebase';
-import firebase from 'firebase';
+import { storage } from "../firebase";
+import firebase from "firebase";
 import { equal } from "assert";
 
-class Relations extends Component {  
+class Relations extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      groupName: "",
       image: null,
-      url: 'gs://photosharing-7553c.appspot.com',
+      url: "gs://photosharing-7553c.appspot.com",
       progress: 0
-    }
-  this.handleChange = this
-    .handleChange
-    .bind(this);
+    };
+    this.handleChange = this.handleChange.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-}
-handleChange = e => {
-  if (e.target.files[0]) {
-    const image = e.target.files[0];
-    this.setState(() => ({image}));
   }
-}
-handleUpload = () => {
-    const {image} = this.state;
+  handleChange = e => {
+    if (e.target.files[0]) {
+      const image = e.target.files[0];
+      this.setState(() => ({ image }));
+    }
+  };
+  handleChange2 = e => {
+    this.setState({
+      groupName: e.target.value
+    });
+  };
+  handleUpload = () => {
+    const { image } = this.state;
     const uploadTask = storage.ref(`images2/${image.name}`).put(image);
-    uploadTask.on('state_changed', 
-    (snapshot) => {
-      // progrss function ....
-      const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-      this.setState({progress});
-    }, 
-    (error) => {
-         // error function ....
-      console.log(error);
-    }, 
-  () => {
-      // complete function ....
-      storage.ref('images2').child(image.name).getDownloadURL().then(url => {
-          console.log(url);
-          this.setState({url});
-      })
-  });
-}
+    uploadTask.on(
+      "state_changed",
+      snapshot => {
+        // progrss function ....
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        this.setState({ progress });
+      },
+      error => {
+        // error function ....
+        console.log(error);
+      },
+      () => {
+        // complete function ....
+        storage
+          .ref("images2")
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            console.log(url);
+            this.setState({ url });
+          });
+      }
+    );
+  };
 
   render() {
     const style = {
-      height: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center'
+      height: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center"
     };
     var rootRef = firebase.database().ref();
-    rootRef.child('users').child('dir').once('value', function(data){
-      console.log('1번 :' , data.val());
-    });
-  /*
+    rootRef
+      .child("users")
+      .child("dir")
+      .once("value", function(data) {
+        console.log("1번 :", data.val());
+      });
+    /*
     var database = firebase.database();
     var dirname="images2"; //이름
     var passwd="123";
@@ -128,12 +143,22 @@ handleUpload = () => {
         <br />
         <section className="division">
           <div className="container p-left-0 align-items-center offset-top-8">
-            <div className="d-flex align-items-center img-fluid offset-2">
+            <div className="d-flex align-items-center img-fluid offset-1">
               {/* <progress value={this.state.progress} max="100" /> */}
               <br />
               <h1 className="p-font-MiSaeng m-bottom-0">
-                사진을 올려주세요! &nbsp;&nbsp;
+                사진을 올려주세요! &nbsp;
+                <input
+                  type="group"
+                  name="group"
+                  // value={this.state.groupName}
+                  onChange={this.handleChange2}
+                  placeholder="그룹명"
+                  size="7"
+                />
+                {this.state.groupName}
               </h1>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <h2 className="p-font-MiSaeng m-bottom-0">
                 <input
                   className="button_YuChuNam p-font-MiSaeng"
@@ -158,7 +183,6 @@ handleUpload = () => {
             </div>
           </div>
         </section>
-
         <br />
         <br />
         {/* END BRANDS-1 */}

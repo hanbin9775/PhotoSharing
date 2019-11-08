@@ -25,10 +25,11 @@ class GroupForm extends Component {
       password: ""
     });
   };
+
   writeUserData(name, password) {
     firebase.database().set({
-      name: name,
-      password: password
+      dirname: name,
+      passwd: password
     });
   }
   render() {
@@ -39,23 +40,26 @@ class GroupForm extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <input
-          placeholder="이름"
-          value={this.state.name}
-          onChange={this.handleChange}
-          name="name"
-        />
-        &nbsp;&nbsp;&nbsp;
-        <input
-          type="password"
-          placeholder="비밀번호"
-          value={this.state.password}
-          onChange={this.handleChange}
-          name="password"
-        />
-        &nbsp;&nbsp;
-        <button type="submit">등록</button>
-        
+        <h3 className="p-font-MiSaeng m-bottom-0">
+          <input
+            placeholder="이름"
+            value={this.state.name}
+            onChange={this.handleChange}
+            name="name"
+          />
+          &nbsp;&nbsp;&nbsp;
+          <input
+            type="password"
+            placeholder="비밀번호"
+            value={this.state.password}
+            onChange={this.handleChange}
+            name="password"
+          />
+          &nbsp;&nbsp;
+          <button className="button_YuChuNam2" type="submit">
+            등록
+          </button>
+        </h3>
       </form>
     );
   }

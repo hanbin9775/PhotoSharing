@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
-import styled, {keyframes} from "styled-components";
-
-
+import styled, { keyframes } from "styled-components";
 
 const Container = styled.div`
   border-radius: 15px;
@@ -11,9 +9,8 @@ const Container = styled.div`
   height: 130px;
   width: 500px;
   position: relative;
-  border : 2px solid gray;
+  border: 2px solid gray;
 `;
-
 
 class GroupInfo extends Component {
   static defaultProps = {
@@ -105,27 +102,31 @@ class GroupInfo extends Component {
       // 수정모드
       return (
         <Container>
-        <div style={style}>
           <div>
-            <input
-              value={this.state.name}
-              name="name"
-              placeholder="이름"
-              onChange={this.handleChange}
-            />
+            <div style={style}>
+              <input
+                value={this.state.name}
+                name="name"
+                placeholder="이름"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="password"
+                value={this.state.password}
+                name="password"
+                placeholder="비밀번호"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="btn" onClick={this.handleToggleEdit}>
+              적용
+            </div>
+            <div className="btn" onClick={this.handleRemove}>
+              삭제
+            </div>
           </div>
-          <div>
-            <input
-              type="password"
-              value={this.state.password}
-              name="password"
-              placeholder="비밀번호"
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="btn" onClick={this.handleToggleEdit}>적용</div>
-          <div className="btn" onClick={this.handleRemove}>삭제</div>
-        </div>
         </Container>
       );
     }
@@ -135,17 +136,21 @@ class GroupInfo extends Component {
 
     return (
       <Container>
-      <div style={style} className="p-font-MiSaeng">
-        <div>
-          <h1>{name}</h1>
+        <div style={style} className="p-font-MiSaeng">
+          <div>
+            <h1>{name}</h1>
+          </div>
+          {/* <div>{password}</div> */}
+          <h4>
+            <div className="btn" onClick={this.handleToggleEdit}>
+              수정
+            </div>
+            &nbsp;
+            <div className="btn" onClick={this.handleRemove}>
+              삭제
+            </div>
+          </h4>
         </div>
-        {/* <div>{password}</div> */}
-        <h4>
-          <div className="btn" onClick={this.handleToggleEdit}>수정</div>
-          &nbsp;
-          <div className="btn" onClick={this.handleRemove}>삭제</div>
-        </h4>
-      </div>
       </Container>
     );
   }

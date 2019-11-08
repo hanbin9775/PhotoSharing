@@ -65,7 +65,7 @@ handleUpload = () => {
     database.ref('users/').child('dir').push({"dirname": "images2", "passwd": "123"});
     
     
- 
+    
     return (
       <div>
         {/* BOOTSTRAP CSS */}

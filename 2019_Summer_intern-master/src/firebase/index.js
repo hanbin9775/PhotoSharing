@@ -1,12 +1,12 @@
-import firebase from 'firebase/app';
-import 'firebase/storage';
+import firebase from "firebase/app";
+import "firebase/storage";
 
-//// 
+////
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyCIL-4J2NxUDkV4zJAyeTiAbJOaImhL3Kw",
   authDomain: "photosharing-7553c.firebaseapp.com",
-  databaseURL: "https://photosharing-7553c.firebaseio.com",
+  // databaseURL: "https://photosharing-7553c.firebaseio.com",
   projectId: "photosharing-7553c",
   storageBucket: "photosharing-7553c.appspot.com",
   messagingSenderId: "867702019316",
@@ -18,6 +18,4 @@ firebase.initializeApp(firebaseConfig);
 
 const storage = firebase.storage();
 
-export {
-    storage, firebase as default
-}
+export { storage, firebase as default };

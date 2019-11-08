@@ -77,7 +77,7 @@ class directory extends Component {
 			============================================= */}
           <MainNav />
         </div>{" "}
-        <div className="container offset-top-8">
+        <div className="container offset-top-10">
           <div>
             <div className="m-left-20">
               <p>

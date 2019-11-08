@@ -122,7 +122,7 @@ class NAV extends Component {
             />
             <a href="/" style={styles.logo}>
               <img
-                src={require("./images/logo_.png")}
+                src={require("./images/uchu_logo.png")}
                 width={150}
                 alt="header-logo"
               />

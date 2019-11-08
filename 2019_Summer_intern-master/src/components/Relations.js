@@ -68,7 +68,7 @@ class Relations extends Component {
       .once("value", function(data) {
         console.log("1번 :", data.val());
       });
-
+      /*
     var database = firebase.database();
     var dirname = "images2"; //이름
     var passwd = "123";
@@ -87,7 +87,7 @@ class Relations extends Component {
           .ref("users/" + count)
           .set({ dirname: dirname, passwd: passwd });
       });
-
+*/
     /*
     
       while(i<count){

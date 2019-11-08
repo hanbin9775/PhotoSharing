@@ -87,7 +87,7 @@ class Relations extends Component {
           .ref("users/" + count)
           .set({ dirname: dirname, passwd: passwd });
       });
-*/
+
     /*
     
       while(i<count){

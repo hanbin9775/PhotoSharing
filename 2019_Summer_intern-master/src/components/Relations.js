@@ -5,6 +5,8 @@ import {storage} from '../firebase';
 import firebase from 'firebase';
 import { equal } from "assert";
 
+window.n1=0;
+window.k=0;
 class Relations extends Component {  
   constructor(props) {
     super(props);
@@ -28,18 +30,25 @@ handleChange = e => {
 handleUpload = () => {
     const {image} = this.state;
     const uploadTask = storage.ref(`images2/${image.name}`).put(image);
+    ////
+    window.n1 = image.name;
+    alert(window.n1);
+    ////
     uploadTask.on('state_changed', 
     (snapshot) => {
-      // progrss function ....
+      /* progrss function ....*/
       const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      alert(image.name);
+      
       this.setState({progress});
+      
     }, 
     (error) => {
-         // error function ....
+         /* error function ....*/
       console.log(error);
     }, 
   () => {
-      // complete function ....
+      /* complete function ....*/
       storage.ref('images2').child(image.name).getDownloadURL().then(url => {
           console.log(url);
           this.setState({url});
@@ -55,27 +64,28 @@ handleUpload = () => {
       alignItems: 'center',
       justifyContent: 'center'
     };
-    var rootRef = firebase.database().ref();
-    rootRef.child('users').child('dir').once('value', function(data){
-      console.log('1번 :' , data.val());
-    });
   
     var database = firebase.database();
     var dirname="images2"; //이름
     var passwd="123";
     var count;
-
+    var count2;
     firebase.database().ref('size/1').once('value').then(function(snapshot) {
       database.ref('size/1').set({"num": snapshot.val().num+1});  
       count = snapshot.val().num+1;
-      alert(count);
       
     database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
-
-
-
     });
     
+    firebase.database().ref('size2/1').once('value').then(function(snapshot) {      
+      if(window.n1 != 0 && window.k==0){
+        
+      database.ref('size2/1').set({"num": snapshot.val().num+1});  
+      count2 = snapshot.val().num+1;
+        database.ref('users2/'+count2).set({"title": window.n1, "when" : passwd});
+        window.k++;
+      }
+    });
     /*
     
       while(i<count){
@@ -93,7 +103,7 @@ handleUpload = () => {
     if(booliden == true){
       database.ref('users/').child('dir').push("dirname" : dirname, "passwd": 1234)  ;
     }
-
+*/
     return (
       <div>
         {/* BOOTSTRAP CSS */}
@@ -345,7 +355,8 @@ handleUpload = () => {
             {/* End row */}
           </div>{" "}
           {/* End container */}
-        </div>{" "}
+    </div> 
+    
         {/* END BRANDS-1 */}
         <br />
         <br />
@@ -362,6 +373,7 @@ handleUpload = () => {
         <div className="bottom">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
+      
     );
   }
 }

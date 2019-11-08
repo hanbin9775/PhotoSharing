@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import MainNav from "./mainNav";
 import GroupForm from "./GroupForm";
 import GroupInfoList from "./GroupInfoList";
-
+import Footers from "./footer";
+import {storage} from '../firebase';
+import firebase from 'firebase';
+import { equal } from "assert";
 
 
 class directory extends Component {
@@ -50,11 +53,35 @@ class directory extends Component {
       )
     });
   };
+
+
+
+
+  
   render() {
     const { information, keyword } = this.state;
     const filteredList = information.filter(
       info => info.name.indexOf(keyword) !== -1
     );
+
+    
+    var database = firebase.database();
+    var dirname="images2"; //이름
+    var passwd="123";
+    var count;
+
+    firebase.database().ref('size/1').once('value').then(function(snapshot) {
+      database.ref('size/1').set({"num": snapshot.val().num+1});  
+      count = snapshot.val().num+1;
+      alert(count);
+      
+    database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
+
+
+
+    });
+
+
     return (
       <div>
         {/* BOOTSTRAP CSS */}

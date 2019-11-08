@@ -2,7 +2,8 @@
 import React, { Component } from "react";
 import { storage } from "../firebase";
 import firebase from "firebase";
-
+window.n1=0;
+window.n2=0;
 class GroupForm extends Component {
   state = {
     name: "",
@@ -32,6 +33,10 @@ class GroupForm extends Component {
   }
   render() {
     var database = firebase.database();
+
+    
+
+
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -50,6 +55,7 @@ class GroupForm extends Component {
         />
         &nbsp;&nbsp;
         <button type="submit">등록</button>
+        
       </form>
     );
   }

@@ -61,14 +61,7 @@ class Relations extends Component {
       alignItems: "center",
       justifyContent: "center"
     };
-    var rootRef = firebase.database().ref();
-    rootRef
-      .child("users")
-      .child("dir")
-      .once("value", function(data) {
-        console.log("1번 :", data.val());
-      });
-      /*
+    /*
     var database = firebase.database();
     var dirname = "images2"; //이름
     var passwd = "123";

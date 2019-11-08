@@ -26,12 +26,6 @@ class GroupForm extends Component {
     });
   };
 
-  writeUserData(name, password) {
-    firebase.database().set({
-      dirname: name,
-      passwd: password
-    });
-  }
   render() {
     var database = firebase.database();
 

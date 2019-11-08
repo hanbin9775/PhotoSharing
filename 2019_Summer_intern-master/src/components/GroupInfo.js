@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 
 import styled, { keyframes } from "styled-components";
+<<<<<<< HEAD
+import { storage } from "../firebase";
+import firebase from "firebase";
+=======
+>>>>>>> d036041ad35f1dd64ca01686a0c936ed92caaced
 
 const Container = styled.div`
   border-radius: 15px;
@@ -95,6 +100,7 @@ class GroupInfo extends Component {
       padding: "8px",
       margin: "8px"
     };
+    var database = firebase.database();
 
     const { editing } = this.state;
 
@@ -133,6 +139,22 @@ class GroupInfo extends Component {
 
     // 일반모드
     const { name, password } = this.props.info;
+
+    var database = firebase.database();
+    var dirname = name; //이름
+    var passwd = password;
+    var count;
+
+    firebase
+      .database()
+      .ref("size/1")
+      .once("value")
+      .then(function(snapshot) {
+        database.ref("size/1").set({ num: snapshot.val().num + 1 });
+        count = snapshot.val().num + 1;
+
+        database.ref("users/" + count).set({ dirname: name, passwd: password });
+      });
 
     return (
       <Container>

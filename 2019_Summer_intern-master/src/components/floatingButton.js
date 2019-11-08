@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Popup from "reactjs-popup";
 import "./floatingButton.css";
-import GroupForm from "./GroupForm";
 
 const floatingButton = () => (
   <Popup
@@ -9,7 +8,17 @@ const floatingButton = () => (
     position="bottom right"
     modal
     closeOnDocumentClick
-  ></Popup>
+  >
+    <span>{<input type="text" placeholder="Folder Name " />}</span>
+    <span>{<input type="text" placeholder="Password" />}</span>
+    <div className="actions">
+      <Popup
+        trigger={<button className="button"> Submit </button>}
+        position="bottom right"
+        closeOnDocumentClick
+      ></Popup>
+    </div>
+  </Popup>
 );
 
 export default floatingButton;

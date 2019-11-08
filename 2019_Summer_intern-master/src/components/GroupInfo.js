@@ -101,6 +101,7 @@ class GroupInfo extends Component {
           </div>
           <div>
             <input
+              type="password"
               value={this.state.password}
               name="password"
               placeholder="비밀번호"

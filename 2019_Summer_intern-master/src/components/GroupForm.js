@@ -32,6 +32,7 @@ class GroupForm extends Component {
           name="name"
         />
         <input
+          type="password"
           placeholder="비밀번호"
           value={this.state.password}
           onChange={this.handleChange}

@@ -60,20 +60,15 @@ class NAV extends Component {
   handleLinkClick(val) {
     this.setState({ menuOpen: false });
 
-    if (val === "Services.") {
-      window.location.href = "#/services";
-      window.scrollTo(0, 0);
-    } else if (val === "Company.") {
+    if (val === "Introduce Members") {
       window.location.href = "#/company";
       window.scrollTo(0, 0);
-    } else if (val === "Press.") {
+    } else if (val === "Directoty") {
       window.location.href = "#/press";
       window.scrollTo(0, 0);
-    } else if (val === "Relations.") {
+    } else if (val === "Upload") {
       window.location.href = "#/relations";
       window.scrollTo(0, 0);
-    } else if (val === "Contact.") {
-      window.scrollTo(0, document.body.scrollHeight);
     }
   }
 
@@ -98,7 +93,7 @@ class NAV extends Component {
         color: "black"
       }
     };
-    const menu = ["Services.", "Company.", "Press.", "Relations.", "Contact."];
+    const menu = ["Introduce Members", "Directoty", "Upload"];
     const menuItems = menu.map((val, index) => {
       return (
         <div>

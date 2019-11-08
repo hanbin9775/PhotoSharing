@@ -23,7 +23,7 @@ class Home extends Component {
         {/* RESPONSIVE CSS */}
         <link href={require("./css/responsive.css")} rel="stylesheet" />
         {/* PAGE CONTENT
-		============================================= */}   
+		============================================= */}
         <div id="page" className="page">
           {/* HEADER
 			============================================= */}
@@ -249,6 +249,23 @@ class Home extends Component {
                       </a>
                     </div>
                   </div>
+
+                  {/* 폴더 추가 아이콘 생성 */}
+                  <div className="col-sm-6 col-md-6">
+                    <div className="press-logo">
+                      <a
+                        href="http://www.fnnews.com/news/201907211835255908"
+                        target="_blank"
+                      >
+                        <img
+                          className="img-fluid"
+                          src={require("./images/press/Press_Box_NEW_Article1.png")}
+                          alt="press-logo"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                  {/* 여기까지 */}
                 </div>{" "}
                 {/* End row */}
               </div>{" "}

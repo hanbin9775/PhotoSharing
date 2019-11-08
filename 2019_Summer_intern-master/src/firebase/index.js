@@ -6,7 +6,7 @@ import "firebase/storage";
 var firebaseConfig = {
   apiKey: "AIzaSyCIL-4J2NxUDkV4zJAyeTiAbJOaImhL3Kw",
   authDomain: "photosharing-7553c.firebaseapp.com",
-  // databaseURL: "https://photosharing-7553c.firebaseio.com",
+  databaseURL: "https://photosharing-7553c.firebaseio.com",
   projectId: "photosharing-7553c",
   storageBucket: "photosharing-7553c.appspot.com",
   messagingSenderId: "867702019316",

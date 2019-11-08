@@ -135,23 +135,38 @@ return firebase.database().ref('/users/' + userId).once('value').then(function(s
         <br />
         <br />
         <br />
-        
-      <div style={style}>
-      <progress value={this.state.progress} max="100"/>
-      <br/>
-        <input type="file" onChange={this.handleChange}/>
-        <button onClick={this.handleUpload}>Upload</button>
-        <br/>
-        <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400"/>
-      </div>
-
-        {/* End row */}
-        <div>
-        </div>
-
-
-
-
+        <section className="division">
+          <div className="container p-left-0 align-items-center offset-top-8">
+            <div className="d-flex align-items-center img-fluid offset-2">
+              {/* <progress value={this.state.progress} max="100" /> */}
+              <br />
+              <h1 className="p-font-MiSaeng m-bottom-0">
+                사진을 올려주세요! &nbsp;&nbsp;
+              </h1>
+              <h2 className="p-font-MiSaeng m-bottom-0">
+                <input
+                  className="button_YuChuNam p-font-MiSaeng"
+                  type="file"
+                  onChange={this.handleChange}
+                />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <img
+                  src={this.state.url || "http://via.placeholder.com/400x300"}
+                  // src={require("./images/animatedcamera.gif")}
+                  alt="업로드 하기 전입니당"
+                  width="400"
+                />
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button
+                  className="button_YuChuNam2 p-font-MiSaeng"
+                  onClick={this.handleUpload}
+                >
+                  등록
+                </button>
+              </h2>
+            </div>
+          </div>
+        </section>
         {/* PARTNERs
 			============================================= */}
         <div id="brands-2" className="brands-section division">

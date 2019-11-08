@@ -24,10 +24,11 @@ class GroupForm extends Component {
       password: ""
     });
   };
+
   writeUserData(name, password) {
     firebase.database().set({
-      name: name,
-      password: password
+      dirname: name,
+      passwd: password
     });
   }
   render() {

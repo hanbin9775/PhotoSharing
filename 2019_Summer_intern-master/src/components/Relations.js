@@ -76,21 +76,24 @@ class Relations extends Component {
       });
     /*
     var database = firebase.database();
-    var dirname="images2"; //이름
-    var passwd="123";
+    var dirname = "images2"; //이름
+    var passwd = "123";
     var count;
-    
-    firebase.database().ref('size/1').once('value').then(function(snapshot) {
-      database.ref('size/1').set({"num": snapshot.val().num+1});  
-      count = snapshot.val().num+1;
-      alert(count);
-      
-    database.ref('users/'+count).set({"dirname": dirname, "passwd" : passwd});
 
+    firebase
+      .database()
+      .ref("size/1")
+      .once("value")
+      .then(function(snapshot) {
+        database.ref("size/1").set({ num: snapshot.val().num + 1 });
+        count = snapshot.val().num + 1;
+        alert(count);
 
-
-    });
-    */
+        database
+          .ref("users/" + count)
+          .set({ dirname: dirname, passwd: passwd });
+      });
+*/
     /*
     
       while(i<count){
@@ -107,8 +110,8 @@ class Relations extends Component {
     
     if(booliden == true){
       database.ref('users/').child('dir').push("dirname" : dirname, "passwd": 1234)  ;
-    }
-    */
+    }*/
+
     return (
       <div>
         {/* BOOTSTRAP CSS */}

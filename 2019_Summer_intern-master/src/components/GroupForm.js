@@ -31,12 +31,14 @@ class GroupForm extends Component {
           onChange={this.handleChange}
           name="name"
         />
+        &nbsp;&nbsp;&nbsp;
         <input
           placeholder="비밀번호"
           value={this.state.password}
           onChange={this.handleChange}
           name="password"
         />
+        &nbsp;&nbsp;
         <button type="submit">등록</button>
       </form>
     );

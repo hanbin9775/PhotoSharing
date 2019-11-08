@@ -117,13 +117,16 @@ class GroupInfo extends Component {
     const { name, password } = this.props.info;
 
     return (
-      <div style={style}>
+      <div style={style} className="p-font-MiSaeng">
         <div>
-          <b>{name}</b>
+          <h1> {name}</h1>
         </div>
-        <div>{password}</div>
-        <button onClick={this.handleToggleEdit}>수정</button>
-        <button onClick={this.handleRemove}>삭제</button>
+        {/* <div>{password}</div> */}
+        <h4>
+          <button onClick={this.handleToggleEdit}>수정</button>
+          &nbsp;
+          <button onClick={this.handleRemove}>삭제</button>
+        </h4>
       </div>
     );
   }

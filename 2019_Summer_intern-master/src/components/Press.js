@@ -9,12 +9,12 @@ class directory extends Component {
     information: [
       {
         id: 0,
-        name: "김민준",
+        name: "여수 여행",
         password: "1234"
       },
       {
         id: 1,
-        name: "홍길동",
+        name: "춘천 여행",
         password: "2345"
       }
     ],
@@ -79,14 +79,18 @@ class directory extends Component {
         </div>{" "}
         <div className="container offset-top-8">
           <div>
-            <GroupForm onCreate={this.handleCreate} />
-            <p>
-              <input
-                placeholder="검색 할 이름을 입력하세요.."
-                onChange={this.handleChange}
-                value={keyword}
-              />
-            </p>
+            <div className="m-left-20">
+              <p>
+                <GroupForm onCreate={this.handleCreate} />
+              </p>
+              <p>
+                <input
+                  placeholder="검색 할 이름을 입력하세요.."
+                  onChange={this.handleChange}
+                  value={keyword}
+                />
+              </p>
+            </div>
             <hr />
             <GroupInfoList
               data={filteredList}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MainNav from "./mainNav";
+import FloatingButton from "./floatingButton";
 import Footers from "./footer";
 
 class Home extends Component {
@@ -28,6 +29,7 @@ class Home extends Component {
           {/* HEADER
 			============================================= */}
           <MainNav />
+          <FloatingButton />
         </div>{" "}
         {/* PRESS-1
 			============================================= */}
@@ -280,21 +282,13 @@ class Home extends Component {
           <div className="row d-flex align-items-center">
             {/* HERO IMAGE */}
             <div className="col-md-12">
-              <div className="hero-img">
-                <img
-                  className="img-fluid"
-                  src={require("./images/press/Press-Media-Logos_1400x70px-8Aug.png")}
-                  alt="hero-image"
-                />
-              </div>
+              <div className="hero-img"></div>
             </div>
           </div>{" "}
         </div>
         {/* FOOTER-2
 			============================================= */}
-        <div className="bottom p-top-0">
-          <Footers />
-        </div>{" "}
+        <div className="bottom p-top-0">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
     );

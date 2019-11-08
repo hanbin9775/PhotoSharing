@@ -6,7 +6,6 @@ class Relations extends Component {
   render() {
     return (
       <div>
-        
         {/* BOOTSTRAP CSS */}
         <link href={require("./css/bootstrap.min.css")} rel="stylesheet" />
         {/* FONT ICONS */}
@@ -39,7 +38,6 @@ class Relations extends Component {
         <br />
         <div>
           <h1>upload</h1>
-
         </div>
         {/* PARTNERs
 			============================================= */}
@@ -234,20 +232,15 @@ class Relations extends Component {
         <br />
         {/* RELATIONs
 			============================================= */}
-        
         <br />
         <br />
-        
         {/* END BRANDS-1 */}
         <br />
         <br />
-        
         {/* END BRANDS-1 */}
         <br />
         <br />
-        <div className="bottom">
-          <Footers />
-        </div>{" "}
+        <div className="bottom">{/* <Footers /> */}</div>{" "}
         {/* END PAGE CONTENT */}
       </div>
     );

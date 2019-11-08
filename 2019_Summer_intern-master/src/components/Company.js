@@ -125,7 +125,7 @@ class Home extends Component {
           {/* HEADER
 			============================================= */}
           <MainNav />
-          <FloatingButton />
+          {/* <FloatingButton /> */}
         </div>{" "}
         {/* End row */}
         {/* HERO-5
@@ -229,9 +229,7 @@ class Home extends Component {
         <br />
         <br />
         <div className="bottom">
-          <div id="ex-hd">
-            <Footers />
-          </div>
+          <div id="ex-hd">{/* <Footers /> */}</div>
         </div>{" "}
         {/* END PAGE CONTENT */}
         {/* EXTERNAL SCRIPTS

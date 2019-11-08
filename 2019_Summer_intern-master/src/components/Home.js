@@ -158,9 +158,7 @@ class Home extends Component {
         {/* END MORE APPS */}
         {/* FOOTER-2
       ============================================= */}
-        <div className="bottom">
-          <Footers />
-        </div>
+        <div className="bottom">{/* <Footers /> */}</div>
         {/* END PAGE CONTENT */}
         {/* EXTERNAL SCRIPTS
 		============================================= */}

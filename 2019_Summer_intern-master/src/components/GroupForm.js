@@ -1,7 +1,5 @@
 // file: src/components/PhoneForm.js
 import React, { Component } from "react";
-import { storage } from "../firebase";
-import firebase from "firebase";
 
 class GroupForm extends Component {
   state = {
@@ -24,14 +22,8 @@ class GroupForm extends Component {
       password: ""
     });
   };
-  writeUserData(name, password) {
-    firebase.database().set({
-      name: name,
-      password: password
-    });
-  }
+
   render() {
-    var database = firebase.database();
     return (
       <form onSubmit={this.handleSubmit}>
         <input
